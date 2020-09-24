@@ -28,9 +28,9 @@ services:
         max-file: "5"
 
   agent:
-    build: ./agents/python-node-yarn
+    build: ./agents/docker-compose
     environment:
-      - SERVER_URL="http://server:8111"
+      - SERVER_URL=http://server:8111
       - AGENT_NAME=docker_compose_agent
     depends_on:
       - redis
