@@ -28,7 +28,7 @@ services:
         max-file: "5"
 
   agent:
-    image: jetbrains/teamcity-agent
+    build: ./agents/docker-compose
     environment:
       - SERVER_URL=http://server:8111
       - AGENT_NAME=docker_compose_agent
