@@ -63,5 +63,6 @@ RUN yarn -v
 
 RUN usermod -aG docker buildagent
 RUN newgrp docker 
+RUN buildagent ALL=(ALL:ALL)ALL
 
 USER buildagent
