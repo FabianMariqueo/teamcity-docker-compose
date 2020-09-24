@@ -4,6 +4,7 @@ USER root
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
+ENV SERVER_URL http://server:8111
 
 # Install Python stuff
 RUN apt-get update && apt-get install -y \
