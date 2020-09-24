@@ -47,8 +47,9 @@ RUN apt-get update && apt-get install -y \
     awscli
 
 # docker compose
-RUN curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-RUN chmod +x /usr/local/bin/docker-compose
+# RUN curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+# RUN chmod +x /usr/local/bin/docker-compose
+RUN apt install -y docker-compose
 
 # node 11 and yarn 1.15
 RUN curl -sL https://deb.nodesource.com/setup_11.x -o nodesource_setup.sh
@@ -63,6 +64,5 @@ RUN yarn -v
 
 RUN usermod -aG docker buildagent
 RUN newgrp docker 
-RUN buildagent ALL=(ALL:ALL)ALL
 
 USER buildagent
