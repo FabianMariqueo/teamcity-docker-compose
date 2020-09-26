@@ -45,22 +45,22 @@ services:
       options:
         max-size: "10m"
         max-file: "5"
-  teamcity-agent:
-    image: jetbrains/teamcity-agent
-    environment:
-      - SERVER_URL=http://server:8111
-      - AGENT_NAME=regular_agent
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
-    labels:
-      - "traefik.enable=false"
-    depends_on:
-      - redis
-    logging:
-      driver: json-file
-      options:
-        max-size: "10m"
-        max-file: "5"
+  # teamcity-agent:
+  #   image: jetbrains/teamcity-agent
+  #   environment:
+  #     - SERVER_URL=http://server:8111
+  #     - AGENT_NAME=regular_agent
+  #   volumes:
+  #     - "/var/run/docker.sock:/var/run/docker.sock"
+  #   labels:
+  #     - "traefik.enable=false"
+  #   depends_on:
+  #     - redis
+  #   logging:
+  #     driver: json-file
+  #     options:
+  #       max-size: "10m"
+  #       max-file: "5"
 
   postgres:
     build: ./postgres
