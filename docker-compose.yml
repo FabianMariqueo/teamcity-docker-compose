@@ -96,8 +96,8 @@ services:
       - --docker.exposedByDefault=false
       - --docker.domain=${VIRTUAL_HOST}
       - --defaultEntryPoints=http,https
-      - --entryPoints=Name:http Address::80 Redirect.EntryPoint:https
-      - --entryPoints=Name:https Address::443 TLS
+      - --entryPoints=Name:http Address::81 Redirect.EntryPoint:https
+      - --entryPoints=Name:https Address::444 TLS
       - --acme=true
       - --acme.domains=${LETSENCRYPT_HOST}
       - --acme.email=${LETSENCRYPT_EMAIL}
@@ -108,8 +108,8 @@ services:
       - --acme.httpChallenge
       - --acme.httpChallenge.entryPoint=http
     ports:
-      - "80:80"
-      - "443:443"
+      - "81:81"
+      - "444:444"
     networks:
       - web
     volumes:
